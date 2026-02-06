@@ -1,24 +1,27 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const nodemailer = require('nodemailer');
-const fs = require('fs');
-const path = require('path');
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import nodemailer from "nodemailer";
+import fs from "fs";
+import path from "path";
+import dotenv from "dotenv";
 import { fileURLToPath } from "url";
-const __dirname = path.dirname(__filename);
-require('dotenv').config();
+
+dotenv.config();
 
 const app = express();
+
+// ES module dirname fix
 const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Middleware
-app.use(cors({
-  origin: "*"
-}));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
-app.use(express.static('public'));
+
+// Serve public folder
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 // MongoDB Connection
