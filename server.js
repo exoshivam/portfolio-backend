@@ -6,9 +6,12 @@ const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
+import { fileURLToPath } from "url";
+const __dirname = path.dirname(__filename);
 require('dotenv').config();
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
 
 // Middleware
 app.use(cors({
@@ -16,6 +19,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use("/public", express.static(path.join(__dirname, "public")));
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
