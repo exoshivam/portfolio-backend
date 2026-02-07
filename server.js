@@ -3,13 +3,15 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import nodemailer from "nodemailer";
 import fs from "fs";
 import path from "path";
+const { Resend } = require("resend");
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 
 dotenv.config();
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const app = express();
 
@@ -297,73 +299,61 @@ app.delete('/api/comments/:commentId', async (req, res) => {
 
 // ========== CONTACT ROUTES ==========
 
-// Configure nodemailer transporter
-const transporter = nodemailer.createTransport({
-  service: process.env.EMAIL_SERVICE || 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
-
 // Send contact email
-app.post('/api/contact', async (req, res) => {
+app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
 
-    // Validation
     if (!name || !email || !subject || !message) {
-      return res.status(400).json({ error: 'All fields are required' });
+      return res.status(400).json({ error: "All fields are required" });
     }
 
-    if (message.trim().length < 1) {
-      return res.status(400).json({ error: 'Message cannot be empty' });
-    }
-
-    // Email to admin (portfolio owner)
-    const adminMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.CONTACT_EMAIL_RECIPIENT,
-      subject: `New Contact Form Submission: ${subject}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
-    };
-
-    // Email to user (confirmation)
-    const userMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: 'We received your message',
-      html: `
-        <h2>Thank you for reaching out!</h2>
-        <p>Hi ${name},</p>
-        <p>We received your message and will get back to you as soon as possible.</p>
-        <p><strong>Your message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-        <br>
-        <p>Best regards,<br>The Portfolio Team</p>
-      `,
-    };
-
-    // Send both emails
-    await transporter.sendMail(adminMailOptions);
-    await transporter.sendMail(userMailOptions);
-
-    res.json({ 
-      success: true, 
-      message: 'Message sent successfully! Check your email for confirmation.' 
+    // Respond immediately
+    res.json({
+      success: true,
+      message: "Message sent successfully",
     });
-  } catch (err) {
-    console.error('Contact email error:', err);
-    res.status(500).json({ error: 'Failed to send email. Please try again later.' });
+
+    // 1️⃣ Mail to YOU (admin)
+    await resend.emails.send({
+      from: "Portfolio Contact <onboarding@resend.dev>",
+      to: process.env.CONTACT_EMAIL_RECIPIENT,
+      replyTo: email,
+      subject: subject,
+      html: `
+        <h2>New Contact Message</h2>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b></p>
+        <p>${message.replace(/\n/g, "<br>")}</p>
+      `,
+    });
+
+    // 2️⃣ Confirmation mail to USER
+    await resend.emails.send({
+      from: "Shivam | Portfolio <onboarding@resend.dev>",
+      to: email,
+      subject: "Thanks for contacting me!",
+      html: `
+        <p>Hi ${name},</p>
+        <p>Thanks for reaching out 🙌</p>
+        <p>I’ve received your message and will get back to you soon.</p>
+
+        <hr />
+
+        <p><b>Your message:</b></p>
+        <p>${message.replace(/\n/g, "<br>")}</p>
+
+        <br />
+        <p>— Shivam</p>
+      `,
+    });
+
+  } catch (error) {
+    console.error("Resend error:", error);
   }
 });
+
 
 // Profile Routes
 app.get('/api/profile', async (req, res) => {
