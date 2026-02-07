@@ -355,12 +355,24 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
+// Helper function to get normalized client IP
+const getClientIp = (req) => {
+  // Get x-forwarded-for header (could be comma-separated list)
+  const xForwardedFor = req.headers['x-forwarded-for'];
+  if (xForwardedFor) {
+    // Take the first IP from the list if it's comma-separated
+    return xForwardedFor.split(',')[0].trim();
+  }
+  
+  // Fallback to direct socket connection
+  return req.socket.remoteAddress || req.connection.remoteAddress || 'unknown';
+};
 
 // Profile Routes
 app.get('/api/profile', async (req, res) => {
   try {
-    // Get client IP
-    const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress;
+    // Get client IP (normalized)
+    const clientIp = getClientIp(req);
     
     // Check if this IP has visited before
     let visitor = await Visitor.findOne({ ip: clientIp });
