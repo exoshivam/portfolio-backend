@@ -324,6 +324,7 @@ app.post("/api/contact", async (req, res) => {
         <h2>New Contact Message</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
+        <p><b>Subject:</b> ${subject}</p>
         <p><b>Message:</b></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,
