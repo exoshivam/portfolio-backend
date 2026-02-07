@@ -45,19 +45,19 @@
   "projects": [
     {
       "_id": "proj-0",
-      "title": "Portfolio Website",
-      "description": "A modern portfolio website built with React and Tailwind CSS",
+      "title": "Mood Tracker",
+      "description": "Tracks your daily mood.",
       "image_urls": [
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1633356122544-f134ef2944f0?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1507238691591-54f0142487b2?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1516321318423-f06f70290c8e?w=400&h=400&fit=crop"
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1-2.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1-3.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1-4.png"
       ],
-      "project_url": "https://github.com/user/portfolio",
+      "project_url": "https://github.com/exoshivam/mood-tracker",
       "technologies": [
-        "React",
-        "Tailwind CSS",
-        "Vite"
+        "EJS",
+        "Node.js",
+        "Express"
       ],
       "likes": 1,
       "order_index": 1
