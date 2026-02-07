@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import fs from "fs";
 import path from "path";
-const { Resend } = require("resend");
+import { Resend } from "resend";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 
