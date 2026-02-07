@@ -357,34 +357,50 @@ app.post("/api/contact", async (req, res) => {
 
 // Helper function to get normalized client IP
 const getClientIp = (req) => {
+  let ip = null;
+  
   // Try multiple headers for IP detection
   // x-forwarded-for header (could be comma-separated list)
   const xForwardedFor = req.headers['x-forwarded-for'];
   if (xForwardedFor) {
-    const ip = xForwardedFor.split(',')[0].trim();
+    ip = xForwardedFor.split(',')[0].trim();
     if (ip && ip !== 'unknown') {
+      console.log('Got IP from x-forwarded-for:', ip);
       return ip;
     }
   }
   
   // Try cf-connecting-ip (Cloudflare)
   if (req.headers['cf-connecting-ip']) {
-    return req.headers['cf-connecting-ip'];
+    ip = req.headers['cf-connecting-ip'];
+    console.log('Got IP from cf-connecting-ip:', ip);
+    return ip;
   }
   
   // Try x-real-ip
   if (req.headers['x-real-ip']) {
-    return req.headers['x-real-ip'];
+    ip = req.headers['x-real-ip'];
+    console.log('Got IP from x-real-ip:', ip);
+    return ip;
   }
   
   // Fallback to direct socket connection
-  const remoteAddress = req.socket?.remoteAddress || req.connection?.remoteAddress;
-  if (remoteAddress && remoteAddress !== 'unknown' && remoteAddress !== '::1') {
+  let remoteAddress = req.socket?.remoteAddress || req.connection?.remoteAddress;
+  
+  // Normalize IPv6-mapped IPv4 addresses (e.g., ::ffff:127.0.0.1)
+  if (remoteAddress && remoteAddress.startsWith('::ffff:')) {
+    remoteAddress = remoteAddress.slice(7); // Remove ::ffff: prefix
+  }
+  
+  if (remoteAddress && remoteAddress !== 'unknown' && remoteAddress !== '::1' && remoteAddress !== '127.0.0.1') {
+    console.log('Got IP from socket:', remoteAddress);
     return remoteAddress;
   }
   
-  // Last resort - use a session identifier or return unknown
-  return 'unknown';
+  // Fallback - use socket remoteAddress even if it's localhost (for testing)
+  ip = remoteAddress || 'unknown';
+  console.log('Fallback IP:', ip);
+  return ip;
 };
 
 // Profile Routes
@@ -392,7 +408,12 @@ app.get('/api/profile', async (req, res) => {
   try {
     // Get client IP (normalized)
     const clientIp = getClientIp(req);
-    console.log('Profile accessed from IP:', clientIp);
+    console.log('===== Profile Access =====');
+    console.log('Client IP:', clientIp);
+    
+    // Check if visitor exists before upsert
+    const existingVisitor = await Visitor.findOne({ ip: clientIp });
+    console.log('Existing visitor found:', !!existingVisitor);
     
     // Use updateOne with upsert to handle concurrent requests safely
     const result = await Visitor.updateOne(
@@ -403,9 +424,10 @@ app.get('/api/profile', async (req, res) => {
     
     // If upsertedId exists, this is a new visitor
     const isNewVisitor = !!result.upsertedId;
-    console.log('Is new visitor:', isNewVisitor, 'Matched:', result.matchedCount, 'Modified:', result.modifiedCount);
+    console.log('UpdateOne result - Upserted:', !!result.upsertedId, 'Matched:', result.matchedCount, 'Modified:', result.modifiedCount);
 
     if (isNewVisitor) {
+      console.log('NEW VISITOR - Incrementing view count');
       // Increment views_count in profile
       let profile = await Profile.findOne();
       if (profile) {
@@ -414,17 +436,21 @@ app.get('/api/profile', async (req, res) => {
           profile.views_count = profile.followers_count || 0;
         }
         profile.views_count = (profile.views_count || 0) + 1;
-        console.log('Incremented view count to:', profile.views_count);
+        console.log('New view count:', profile.views_count);
         await profile.save();
       }
+    } else {
+      console.log('RETURNING VISITOR - Not incrementing');
     }
 
-    // Return profile with current views count (migrate legacy field if necessary)
+    // Return profile with current views count
     const profile = await Profile.findOne();
     if (profile && typeof profile.views_count === 'undefined' && typeof profile.followers_count !== 'undefined') {
       profile.views_count = profile.followers_count || 0;
       await profile.save();
     }
+    console.log('Returning profile with views_count:', profile?.views_count);
+    console.log('==========================');
     res.json(profile || {});
   } catch (err) {
     console.error('Profile error:', err);
