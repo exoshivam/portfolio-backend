@@ -357,15 +357,34 @@ app.post("/api/contact", async (req, res) => {
 
 // Helper function to get normalized client IP
 const getClientIp = (req) => {
-  // Get x-forwarded-for header (could be comma-separated list)
+  // Try multiple headers for IP detection
+  // x-forwarded-for header (could be comma-separated list)
   const xForwardedFor = req.headers['x-forwarded-for'];
   if (xForwardedFor) {
-    // Take the first IP from the list if it's comma-separated
-    return xForwardedFor.split(',')[0].trim();
+    const ip = xForwardedFor.split(',')[0].trim();
+    if (ip && ip !== 'unknown') {
+      return ip;
+    }
+  }
+  
+  // Try cf-connecting-ip (Cloudflare)
+  if (req.headers['cf-connecting-ip']) {
+    return req.headers['cf-connecting-ip'];
+  }
+  
+  // Try x-real-ip
+  if (req.headers['x-real-ip']) {
+    return req.headers['x-real-ip'];
   }
   
   // Fallback to direct socket connection
-  return req.socket.remoteAddress || req.connection.remoteAddress || 'unknown';
+  const remoteAddress = req.socket?.remoteAddress || req.connection?.remoteAddress;
+  if (remoteAddress && remoteAddress !== 'unknown' && remoteAddress !== '::1') {
+    return remoteAddress;
+  }
+  
+  // Last resort - use a session identifier or return unknown
+  return 'unknown';
 };
 
 // Profile Routes
@@ -373,15 +392,20 @@ app.get('/api/profile', async (req, res) => {
   try {
     // Get client IP (normalized)
     const clientIp = getClientIp(req);
+    console.log('Profile accessed from IP:', clientIp);
     
-    // Check if this IP has visited before
-    let visitor = await Visitor.findOne({ ip: clientIp });
+    // Use updateOne with upsert to handle concurrent requests safely
+    const result = await Visitor.updateOne(
+      { ip: clientIp },
+      { $set: { visited_at: new Date() } },
+      { upsert: true }
+    );
+    
+    // If upsertedId exists, this is a new visitor
+    const isNewVisitor = !!result.upsertedId;
+    console.log('Is new visitor:', isNewVisitor, 'Matched:', result.matchedCount, 'Modified:', result.modifiedCount);
 
-    if (!visitor) {
-      // New visitor - create entry and increment views count
-      visitor = new Visitor({ ip: clientIp });
-      await visitor.save();
-
+    if (isNewVisitor) {
       // Increment views_count in profile
       let profile = await Profile.findOne();
       if (profile) {
@@ -390,6 +414,7 @@ app.get('/api/profile', async (req, res) => {
           profile.views_count = profile.followers_count || 0;
         }
         profile.views_count = (profile.views_count || 0) + 1;
+        console.log('Incremented view count to:', profile.views_count);
         await profile.save();
       }
     }
@@ -402,6 +427,7 @@ app.get('/api/profile', async (req, res) => {
     }
     res.json(profile || {});
   } catch (err) {
+    console.error('Profile error:', err);
     res.status(500).json({ error: err.message });
   }
 });
