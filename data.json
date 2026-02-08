@@ -64,415 +64,116 @@
     },
     {
       "_id": "proj-1",
-      "title": "E-Commerce Platform",
-      "description": "Full-stack e-commerce platform with payment integration and inventory management",
+      "title": "Call Break",
+      "description": "While learining Socket.IO, made a small project using it.",
       "image_urls": [
-        "https://images.unsplash.com/photo-1523381140519-bffd3b1ad862?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1563013544-824ae1bf4de8?w=400&h=400&fit=crop"
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/a4.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/a5.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/a6.png"
       ],
-      "project_url": "https://github.com/user/ecommerce",
+      "project_url": "https://github.com/exoshivam/socket-ejs-game",
       "technologies": [
-        "React",
+        "EJS",
         "Node.js",
-        "MongoDB",
-        "Stripe"
-      ],
-      "likes": 1,
-      "order_index": 2
-    },
-    {
-      "_id": "proj-2",
-      "title": "Real Estate Management System",
-      "description": "Property listing and management system with advanced filtering and search",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1560521677-fc7ee4d7467b?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1540932239986-310128078e6c?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/real-estate",
-      "technologies": [
-        "React",
         "Express",
-        "PostgreSQL",
-        "Google Maps"
-      ],
-      "likes": 1,
-      "order_index": 3
-    },
-    {
-      "_id": "proj-3",
-      "title": "Social Media Dashboard",
-      "description": "Analytics dashboard for managing multiple social media accounts",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1526374965328-7f5ae4e8b69e?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/social-dashboard",
-      "technologies": [
-        "React",
-        "Chart.js",
-        "Node.js",
-        "Redis"
-      ],
-      "likes": 0,
-      "order_index": 4
-    }
-  ],
-  "experiments": [
-    {
-      "_id": "exp-0",
-      "title": "AI Chat Bot",
-      "description": "Experimental AI chatbot using GPT-3 API and React with natural language processing",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1677442d019cecf8b9f56d29e0e52a8c1dd81d7d?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1589519160732-57fc498494f8?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/ai-chatbot",
-      "technologies": [
-        "React",
-        "OpenAI API",
-        "Node.js"
-      ],
-      "likes": 1,
-      "order_index": 1
-    },
-    {
-      "_id": "exp-1",
-      "title": "3D Web Experience",
-      "description": "Interactive 3D visualization using Three.js and WebGL with animations",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1593642532400-2682a8a0fda7?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1638809268165-420d9d62d84c?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/3d-web",
-      "technologies": [
-        "Three.js",
-        "WebGL",
-        "JavaScript"
+        "Socket.IO"
       ],
       "likes": 1,
       "order_index": 2
-    },
-    {
-      "_id": "exp-2",
-      "title": "Machine Learning Image Recognition",
-      "description": "ML model trained to recognize objects in images using TensorFlow",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/ml-image-recognition",
-      "technologies": [
-        "TensorFlow",
-        "Python",
-        "JavaScript"
-      ],
-      "likes": 1,
-      "order_index": 3
-    },
-    {
-      "_id": "exp-3",
-      "title": "Voice Assistant Application",
-      "description": "Browser-based voice assistant with speech recognition and synthesis",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1589519160732-57fc498494f8?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1516321318423-f06f70290c8e?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/voice-assistant",
-      "technologies": [
-        "Web Speech API",
-        "React",
-        "Node.js"
-      ],
-      "likes": 38,
-      "order_index": 4
     }
   ],
+  "experiments": [],
   "hackathons": [
     {
       "_id": "hack-0",
-      "title": "Climate Tech Hackathon Winner",
-      "description": "Built a sustainable carbon tracking app - Won 1st prize and $10,000 grant",
+      "title": "Rescon 2025",
+      "description": "Attendend Rescon 2025 at Bennet University",
       "image_urls": [
-        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=400&fit=crop"
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/h1.png"
       ],
-      "project_url": "https://github.com/user/carbon-tracker",
+      "project_url": "https://github.com/exoshivam",
       "technologies": [
-        "React",
-        "MongoDB",
-        "Mapbox API"
       ],
-      "likes": 90,
+      "likes": 1,
       "order_index": 1
     },
     {
       "_id": "hack-1",
-      "title": "Healthcare Innovation Hackathon",
-      "description": "Developed a telemedicine platform for rural areas - Top 5 finalist",
+      "title": "SIH 2025",
+      "description": "Got selected in the college for SIH 2025, for more details about the project visit the post section in the home page.",
       "image_urls": [
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1576091160499-112ba8d25d1d?w=400&h=400&fit=crop"
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b1.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b2.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b3.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b4.png"
       ],
-      "project_url": "https://github.com/user/telemedicine",
+      "project_url": "https://github.com/exoshivam/smart-attendance",
       "technologies": [
-        "React Native",
+        "EJS",
         "Node.js",
-        "PostgreSQL"
+        "Express",
+        "Iot/ESP32"
       ],
-      "likes": 72,
+      "likes": 1,
       "order_index": 2
-    },
-    {
-      "_id": "hack-2",
-      "title": "FinTech Innovation Challenge",
-      "description": "Created a blockchain-based payment system for faster transactions",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1563013544-824ae1bf4de8?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/fintech-payment",
-      "technologies": [
-        "Blockchain",
-        "Solidity",
-        "Web3.js",
-        "React"
-      ],
-      "likes": 56,
-      "order_index": 3
-    },
-    {
-      "_id": "hack-3",
-      "title": "Education Tech Hackathon",
-      "description": "Built an AI-powered personalized learning platform for students",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1516321318423-f06f70290c8e?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1633356122544-f134ef2944f0?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/edu-platform",
-      "technologies": [
-        "React",
-        "Python",
-        "Machine Learning"
-      ],
-      "likes": 42,
-      "order_index": 4
     }
   ],
-  "side_ideas": [
-    {
-      "_id": "side-0",
-      "title": "Productivity Timer",
-      "description": "Simple Pomodoro timer with music, notifications and productivity tracking",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1434626881859-f627ee3d6b72?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1533357489548-ca0fca6b4cc1?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/productivity-timer",
-      "technologies": [
-        "React",
-        "Tailwind CSS"
-      ],
-      "likes": 35,
-      "order_index": 1
-    },
-    {
-      "_id": "side-1",
-      "title": "Daily Quote Generator",
-      "description": "Random quote generator with sharing capabilities to social media",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1516321318423-f06f70290c8e?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1455849318169-8d625cb80f9f?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/quote-generator",
-      "technologies": [
-        "React",
-        "API Integration"
-      ],
-      "likes": 29,
-      "order_index": 2
-    },
-    {
-      "_id": "side-2",
-      "title": "Expense Tracker",
-      "description": "Personal expense tracking app with charts and budget management",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45b?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/expense-tracker",
-      "technologies": [
-        "React",
-        "Chart.js",
-        "LocalStorage"
-      ],
-      "likes": 41,
-      "order_index": 3
-    },
-    {
-      "_id": "side-3",
-      "title": "Weather App",
-      "description": "Beautiful weather application with geolocation and forecasts",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1523321318423-f06f70290c8e?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/weather-app",
-      "technologies": [
-        "React",
-        "OpenWeather API",
-        "Mapbox"
-      ],
-      "likes": 25,
-      "order_index": 4
-    }
-  ],
+  "side_ideas": [],
   "active_projects": [
     {
       "_id": "active-0",
-      "title": "AI Chat Bot",
-      "description": "Building an advanced AI chatbot with GPT integration and RAG capabilities. Currently working on improving context understanding and response accuracy.",
+      "title": "Lakadia(Call Break)",
+      "description": "Building a multiplayer game using Socket.IO",
       "image_urls": [
-        "https://images.unsplash.com/photo-1677442d019cecf8b9f56d29e0e52a8c1dd81d7d?w=400&h=400&fit=crop"
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/a1.png"
       ],
-      "project_url": "https://github.com/user/ai-chatbot",
+      "project_url": "https://github.com/exoshivam/socket-ejs-game",
       "technologies": [
-        "React",
-        "OpenAI API",
+        "EJS",
+        "Express",
         "Node.js",
-        "MongoDB"
+        "Socket.IO"
       ],
       "status": "In Progress",
-      "progress": 65,
+      "progress": 70,
       "order_index": 1
     },
     {
       "_id": "active-1",
-      "title": "Smart Home Automation",
-      "description": "IoT system for controlling lights, temperature, and security. Currently integrating voice commands and mobile app control.",
+      "title": "Finance Flow",
+      "description": "get analysis of your expenditure.",
       "image_urls": [
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop"
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project2.png"
       ],
-      "project_url": "https://github.com/user/smart-home",
+      "project_url": "https://github.com/exoshivam",
       "technologies": [
-        "Arduino",
-        "MQTT",
-        "Python",
-        "React"
+        "EJS",
+        "Node.js",
+        "Express"
       ],
       "status": "In Progress",
-      "progress": 50,
+      "progress": 80,
       "order_index": 2
-    },
-    {
-      "_id": "active-2",
-      "title": "Real Estate Management System",
-      "description": "Property listing platform with advanced filtering. Working on adding AI-powered recommendations and virtual tours.",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1560521677-fc7ee4d7467b?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/real-estate",
-      "technologies": [
-        "React",
-        "Express",
-        "PostgreSQL",
-        "Google Maps"
-      ],
-      "status": "In Progress",
-      "progress": 75,
-      "order_index": 3
-    },
-    {
-      "_id": "active-3",
-      "title": "Machine Learning Image Recognition",
-      "description": "ML model for object recognition. Fine-tuning model accuracy and optimizing inference speed.",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/ml-image-recognition",
-      "technologies": [
-        "TensorFlow",
-        "Python",
-        "React",
-        "Node.js"
-      ],
-      "status": "In Progress",
-      "progress": 45,
-      "order_index": 4
     }
   ],
   "iot_works": [
     {
       "_id": "iot-0",
-      "title": "Smart Home Automation",
-      "description": "IoT system for controlling lights, temperature, and security with voice commands",
+      "title": "Smart Attendance",
+      "description": "Automatically marks and store attendance even when system is offline.",
       "image_urls": [
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1558618665-e404f47f33bc?w=400&h=400&fit=crop"
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b9.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/i1.png"
       ],
-      "project_url": "https://github.com/user/smart-home",
+      "project_url": "https://github.com/exoshivam",
       "technologies": [
-        "Arduino",
-        "MQTT",
-        "Python",
-        "Node.js"
+        "ESP32",
+        "RFID",
+        "LCD Display",
+        "SD Card Module"
       ],
-      "likes": 77,
+      "likes": 1,
       "order_index": 1
-    },
-    {
-      "_id": "iot-1",
-      "title": "Weather Station Device",
-      "description": "Real-time weather monitoring with IoT sensors and web dashboard analytics",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/weather-station",
-      "technologies": [
-        "Raspberry Pi",
-        "Python",
-        "React",
-        "InfluxDB"
-      ],
-      "likes": 64,
-      "order_index": 2
-    },
-    {
-      "_id": "iot-2",
-      "title": "Plant Monitoring System",
-      "description": "IoT-based plant care system with moisture sensors and automated watering",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1621905267536-598cf32026b9?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1582484313014-f5e6461b8e18?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/plant-monitoring",
-      "technologies": [
-        "Arduino",
-        "NodeMCU",
-        "React",
-        "Firebase"
-      ],
-      "likes": 47,
-      "order_index": 3
-    },
-    {
-      "_id": "iot-3",
-      "title": "Air Quality Monitor",
-      "description": "Distributed air quality monitoring network with real-time data visualization",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1613387573804-8fb5f434f6ff?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1596394516093-501ba68352ba?w=400&h=400&fit=crop"
-      ],
-      "project_url": "https://github.com/user/air-quality-monitor",
-      "technologies": [
-        "Raspberry Pi",
-        "Python",
-        "React",
-        "InfluxDB"
-      ],
-      "likes": 52,
-      "order_index": 4
     }
   ]
 }
