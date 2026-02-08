@@ -101,6 +101,16 @@ const Project = mongoose.model('Project', projectSchema);
 const Comment = mongoose.model('Comment', commentSchema);
 const Visitor = mongoose.model('Visitor', visitorSchema);
 
+//resume download route
+app.get("/download/resume", (req, res) => {
+  const filePath = path.join(
+    __dirname,
+    "public/uploads/projects/resume.pdf"
+  );
+
+  res.download(filePath, "Shivam_resume.pdf");
+});
+
 // Routes
 
 // ========== AUTHENTICATION ROUTES ==========
