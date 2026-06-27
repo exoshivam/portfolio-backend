@@ -358,7 +358,7 @@ app.post('/api/chat', async (req, res) => {
     }
 
     // Proxy request to python backend
-    const agentUrl = process.env.AGENT_URL || 'http://localhost:8000';
+    const agentUrl = process.env.AGENT_URL || 'https://portfolio-chatbot-backend-3e3y.onrender.com';
     const aiRes = await fetch(`${agentUrl}/chat/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
