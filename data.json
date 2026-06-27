@@ -1,0 +1,261 @@
+{
+  "profile": {
+    "username": "developer_shivam2106",
+    "full_name": "SHIVAM KUMAR YADAV",
+    "bio": "Location: 📍Noida",
+    "website": "www.linkedin.com/in/shivam-yadav2106",
+    "github_url": "https://github.com/exoshivam",
+    "avatar_url": "https://portfolio-backend-zphz.onrender.com/public/uploads/avatar/profile.png",
+    "projects_count": 5,
+    "views_count": 239,
+    "following_count": 50
+  },
+  "skills": [
+    {
+      "name": "React",
+      "icon": "FaBeer",
+      "order_index": 1
+    },
+    {
+      "name": "Node.js",
+      "icon": "Cpu",
+      "order_index": 2
+    },
+    {
+      "name": "MongoDB",
+      "icon": "Database",
+      "order_index": 3
+    },
+    {
+      "name": "TypeScript",
+      "icon": "Code2",
+      "order_index": 4
+    },
+    {
+      "name": "Express",
+      "icon": "Zap",
+      "order_index": 5
+    },
+      {
+        "name": "FastAPI",
+        "icon": "Rocket",
+        "order_index": 6
+      },
+      {
+        "name": "LangChain",
+        "icon": "Link2",
+        "order_index": 7
+      },
+      {
+        "name": "Python",
+        "icon": "FileCode2",
+        "order_index": 8
+      },
+      {
+        "name": "LLM",
+        "icon": "Brain",
+        "order_index": 9
+      }
+  ],
+  "projects": [
+    {
+      "_id": "proj-0",
+      "title": "GoCorp",
+      "description": "A cab management system for corporates.",
+      "image_urls": [
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782540825/Screenshot_2026-06-27_100430_sl1pur.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782540758/Screenshot_2026-06-27_090720_rygkgv.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782540798/Screenshot_2026-06-27_090952_voaozj.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782540805/Screenshot_2026-06-27_100105_nisra0.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782540808/Screenshot_2026-06-27_100321_o9ejph.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782540780/Screenshot_2026-06-27_100534_cjz3dd.png"
+      ],
+      "project_url": "https://go-corp-overall.vercel.app/",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "likes": 1,
+      "order_index": 1
+    },
+        {
+          "_id": "proj-1",
+          "title": "Rural School Attendace System",
+          "description": "Lets you mark attendance even when offline.",
+          "image_urls": [
+            "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494838/b1_thcq0q.png",
+            "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494828/b2_rmchp5.png",
+            "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494829/b4_o9ycrs.png",
+            "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494826/b6_ykkyhw.png",
+            "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494820/b7_sxlcsu.png"
+          ],
+          "project_url": "https://github.com/exoshivam/smart-attendance",
+          "technologies": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "ESP32"
+          ],
+          "likes": 1,
+          "order_index": 2
+        },
+    {
+      "_id": "proj-2",
+      "title": "Mood Tracker",
+      "description": "Tracks your daily mood and shows analytics based on that.",
+      "image_urls": [
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1-2.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1-3.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/project1-4.png"
+      ],
+      "project_url": "https://github.com/exoshivam/mood-tracker",
+      "technologies": [
+        "EJS",
+        "Node.js",
+        "Express"
+      ],
+      "likes": 1,
+      "order_index": 3
+    },
+    {
+      "_id": "proj-3",
+      "title": "AI Career Mentor",
+      "description": "A AI mentor that guides you and helps you prepare for the specified job.",
+      "image_urls": [
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782542094/Screenshot_2026-02-27_082846_ige9on.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782542094/Screenshot_2026-02-27_082922_mfb8ra.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782542095/Screenshot_2026-02-27_082944_lsacs6.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782542091/Screenshot_2026-02-27_083044_kl9ge8.png"
+      ],
+      "project_url": "https://github.com/exoshivam",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Langchain",
+        "LLM"
+      ],
+      "likes": 1,
+      "order_index": 4
+    },
+    {
+      "_id": "proj-4",
+      "title": "Call Break",
+      "description": "While learining Socket.IO, made a small project using it.",
+      "image_urls": [
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494879/a4_f7hucr.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494881/a5_ad7bsm.png",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494831/a6_eauldr.png"
+      ],
+      "project_url": "https://github.com/exoshivam/socket-ejs-game",
+      "technologies": [
+        "EJS",
+        "Node.js",
+        "Express",
+        "Socket.IO"
+      ],
+      "likes": 1,
+      "order_index": 5
+    }
+  ],
+  "experiments": [],
+  "hackathons": [
+    {
+      "_id": "hack-0",
+      "title": "Rescon 2025",
+      "description": "Attendend Rescon 2025 at Bennet University",
+      "image_urls": [
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494838/h1_btanop.png"
+      ],
+      "project_url": "https://github.com/exoshivam",
+      "technologies": [
+      ],
+      "likes": 1,
+      "order_index": 1
+    },
+    {
+      "_id": "hack-1",
+      "title": "SIH 2025",
+      "description": "Got selected in the college for SIH 2025, for more details about the project visit the post section in the home page.",
+      "image_urls": [
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b1.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b2.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b3.png",
+        "https://portfolio-backend-zphz.onrender.com/public/uploads/projects/b4.png"
+      ],
+      "project_url": "https://github.com/exoshivam/smart-attendance",
+      "technologies": [
+        "EJS",
+        "Node.js",
+        "Express",
+        "Iot/ESP32"
+      ],
+      "likes": 1,
+      "order_index": 2
+    }
+  ],
+  "side_ideas": [],
+  "active_projects": [
+    {
+      "_id": "active-0",
+      "title": "GoCorp",
+      "description": "Building a corporate cab management system.",
+      "image_urls": [
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782540825/Screenshot_2026-06-27_100430_sl1pur.png"
+      ],
+      "project_url": "https://go-corp-overall.vercel.app",
+      "technologies": [
+        "React",
+        "Express",
+        "Node.js",
+        "MongoDB"
+      ],
+      "status": "In Progress",
+      "progress": 80,
+      "order_index": 1
+    },
+    {
+      "_id": "active-1",
+      "title": "Portfolio Doctor",
+      "description": "Get real-time analysis and health score of your positions.",
+      "image_urls": [
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782541415/Screenshot_2026-06-27_115304_ytipxk.png"
+      ],
+      "project_url": "https://github.com/exoshivam",
+      "technologies": [
+        "Python",
+        "React",
+        "Langchain",
+        "Flask"
+      ],
+      "status": "In Progress",
+      "progress": 90,
+      "order_index": 2
+    }
+  ],
+  "iot_works": [
+    {
+      "_id": "iot-0",
+      "title": "Smart Attendance",
+      "description": "Automatically marks and store attendance even when system is offline and syncs when online.",
+      "image_urls": [
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494822/b9_c8p9a6.jpg",
+        "https://res.cloudinary.com/dqidg5j1u/image/upload/v1782494827/i1_fzssjo.jpg"
+      ],
+      "project_url": "https://github.com/exoshivam",
+      "technologies": [
+        "ESP32",
+        "RFID",
+        "LCD Display",
+        "SD Card Module"
+      ],
+      "likes": 1,
+      "order_index": 1
+    }
+  ]
+}
