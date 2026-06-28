@@ -102,7 +102,12 @@ const Comment = mongoose.model('Comment', commentSchema);
 const Visitor = mongoose.model('Visitor', visitorSchema);
 
 // Routes
-
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    service: "Portfolio Backend"
+  });
+});
 // ========== AUTHENTICATION ROUTES ==========
 
 // Sign Up Route
