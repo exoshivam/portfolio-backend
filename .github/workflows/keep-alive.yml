@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Ping Backend
         run: |
-          curl -L https://portfolio-chatbot-backend-3e3y.onrender.com/
+          curl -L https://portfolio-backend-zphz.onrender.com/health
